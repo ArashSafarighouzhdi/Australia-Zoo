@@ -16,6 +16,9 @@ Please follow these guidelines to ensure smooth collaboration within the team.
 
 ## 🌿 Branch Naming Convention
 Use the following format for all branches:
+feature/<short-description>
+fix/<short-description>
+update/<short-description>
 **Examples:**
 - `feature/homepage-layout`
 - `fix/responsive-navbar`
