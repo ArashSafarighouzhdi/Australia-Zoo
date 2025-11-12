@@ -27,11 +27,11 @@ Use the following format for all branches:
 
 ## 🧩 Workflow
 
-1. **Create a new branch** from `development` before starting any work.
+1. **Create a new branch** from `main` before starting any work.
 2. Implement your feature or fix.
 3. **Commit messages** should be clear and use present tense.  
    Example: `Add sidebar toggle functionality`
-4. **Push** your branch and open a **Pull Request (PR)** into the `development` branch.
+4. **Push** your branch and open a **Pull Request (PR)** into the `main` branch.
 5. Each PR must be **reviewed by 2 team members** before merging.
 6. Once approved and tested, it will be merged into `development`.
 7. When all features are stable, `development` is merged into `main` (production).
