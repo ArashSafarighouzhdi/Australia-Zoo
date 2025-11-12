@@ -34,7 +34,6 @@ Use the following format for all branches:
 4. **Push** your branch and open a **Pull Request (PR)** into the `main` branch.
 5. Each PR must be **reviewed by 2 team members** before merging.
 6. Once approved and tested, it will be merged into `development`.
-7. When all features are stable, `development` is merged into `main` (production).
 
 ---
 
