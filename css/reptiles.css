@@ -1,0 +1,13 @@
+.sidebar .tab {
+  border-radius: 6px;
+  color: #333;
+  cursor: pointer;
+  margin-bottom: 15px;
+  padding: 10px 12px;  
+}
+
+.sidebar .tab:hover {
+  background-color: lightgray;
+  transform: scale(1.03);
+  color: gray;
+}
