@@ -1,3 +1,4 @@
+/* --- Original Styles --- */
 .mammals-content {
   display: flex;
   flex-direction: column;
@@ -63,4 +64,33 @@
 
 .animal-card-full p {
   margin: 2px 0;
+}
+
+/* ---------------------------------------------
+   Mobile Responsive (iPhone 12 Pro Max 428px)
+----------------------------------------------*/
+@media (max-width: 480px) {
+  .animal-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .animal-card img {
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+  }
+
+  .group-intro-title {
+    font-size: 20px;
+  }
+
+  .animal-panel {
+    padding: 16px;
+  }
+
+  .read-more-btn {
+    width: 100%;
+    text-align: center;
+  }
 }
