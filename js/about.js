@@ -94,8 +94,6 @@ const teamData = [
 const teamList = document.getElementById("teamList");
 const defaultMessage = document.getElementById("defaultMessage");
 const memberProfile = document.getElementById("memberProfile");
-const footerNames = document.getElementById("footerNames");
-
 let activeMember = null;
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -104,7 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function init() {
   renderTeamList();
-  renderFooterNames();
   setupEventListeners();
 }
 
@@ -121,11 +118,6 @@ function renderTeamList() {
     li.appendChild(a);
     teamList.appendChild(li);
   });
-}
-
-function renderFooterNames() {
-  const names = teamData.map((member) => member.name).join(" - ");
-  footerNames.textContent = names;
 }
 
 function setupEventListeners() {
