@@ -40,18 +40,69 @@
   text-decoration: none;
   display: block;
 }
+
+
 .container div.content {
   grid-area: content;
-   background-image: linear-gradient(rgba(0, 0, 0, 0.4),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.9)),
-    url("../assets/images/home_bg.png");
-  justify-content: center;
-  align-items: center;
+      url("../images/home_bg.png"); 
+  
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
+  color : white;
+  
+ 
+  position: relative;
+ 
+  padding: 40px; 
+ 
 }
+
+
+.homepage_infobox{
+  display: flex;
+  flex-direction: column;
+  position: absolute; 
+  bottom: 10%;
+  left: 5%; 
+  max-width: 60%; 
+  z-index: 10; 
+}
+
+
+.homepage_img_title{
+  color: white;
+ 
+  display: block; 
+  text-align: left; 
+  font-size: 3em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 20px; 
+  
+  height: auto; 
+  align-items: flex-start; 
+  justify-content: flex-start;
+}
+
+/* 3. The Subtext (Australia is home to some...) */
+.homepage_desc{
+  color: white;
+  /* Key changes: Make sure it's not centered and uses appropriate line height */
+  display: block;
+  text-align: left; /* Left align the text */
+  font-size: 1.2em; /* Adjust size for subtext */
+  line-height: 1.4;
+  /* Remove fixed height/centering properties that restrict flow */
+  height: auto;
+  width: 100%; /* Take up the full width of the .homepage_infobox */
+  
+  /* Resetting unwanted grid/place-items properties */
+  display: block; 
+}
+
 
 header {
   grid-area: header;
@@ -114,6 +165,8 @@ header nav a {
 header nav a:hover {
   color: rgb(27, 219, 88) (0, 255, 34);
 }
+
+
 
 footer {
   grid-area: footer;
