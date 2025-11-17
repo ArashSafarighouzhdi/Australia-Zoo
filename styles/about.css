@@ -1,4 +1,3 @@
-
 .sidebar h3 {
   font-size: 1.5em;
   margin-bottom: 15px;
@@ -131,7 +130,6 @@
   flex-shrink: 0;
 }
 
-/* Member Details */
 .member-details {
   color: #666;
   line-height: 1.8;
