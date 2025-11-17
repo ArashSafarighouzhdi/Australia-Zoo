@@ -22,6 +22,7 @@ sidebar_links.forEach((links) => {
 
   sidebartext.textContent = links.text;
   sidebarLink.textContent = links.url;
+  //sidebarLink.href = sidebarLink;
 
   sidebartext.appendChild(sidebarLink);
   sidebar_list.appendChild(sidebartext);
