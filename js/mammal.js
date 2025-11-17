@@ -1,4 +1,4 @@
-
+// List of mammals with their data
 const mammals = [
   {
     id: "echidna",
@@ -38,11 +38,13 @@ const mammals = [
   }
 ];
 
+// Wait for the DOM to load
 document.addEventListener("DOMContentLoaded", () => {
+  // Select all sidebar links that have data-animal-id
   const sidebarLinks = document.querySelectorAll(".sidebar a[data-animal-id]");
   const panel = document.getElementById("animal-panel");
 
-  
+  // Default panel content when no animal is selected
   const defaultPanelHtml = `
     <h2 class="group-intro-title">Meet Australia's Marvelous Mammals</h2>
     <p class="group-intro-text">
@@ -52,15 +54,17 @@ document.addEventListener("DOMContentLoaded", () => {
     </p>
   `;
 
+  // Initialize panel with default content
   panel.innerHTML = defaultPanelHtml;
 
+  // Function to truncate text to a specific length
   function truncate(text, maxLength) {
     if (!text) return "";
     if (text.length <= maxLength) return text;
     return text.slice(0, maxLength) + "…";
   }
 
- 
+  // Display short summary of the selected animal
   function showShortSummary(animal) {
     panel.innerHTML = `
       <article class="animal-card">
@@ -79,12 +83,14 @@ document.addEventListener("DOMContentLoaded", () => {
       </article>
     `;
 
+    // Add click event to "Read more" button to show full summary
     const btn = panel.querySelector(".read-more-btn");
     if (btn) {
       btn.addEventListener("click", () => showFullSummary(animal));
     }
   }
 
+  // Display full summary of the selected animal
   function showFullSummary(animal) {
     panel.innerHTML = `
       <article class="animal-card animal-card-full">
@@ -102,30 +108,36 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
- 
+  // Add click event to each sidebar link
   sidebarLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
-      event.preventDefault();
+      event.preventDefault(); // Prevent default link behavior
 
       const isAlreadyActive = link.classList.contains("active");
+
+      // Remove active class from all links
       sidebarLinks.forEach((l) => l.classList.remove("active"));
 
+      // If clicked link was already active, reset panel to default
       if (isAlreadyActive) {
-       
         panel.innerHTML = defaultPanelHtml;
         return;
       }
 
+      // Add active class to clicked link
       link.classList.add("active");
 
+      // Find the selected animal by id
       const animalId = link.dataset.animalId;
       const animal = mammals.find((a) => a.id === animalId);
 
+      // If animal not found, show default panel
       if (!animal) {
         panel.innerHTML = defaultPanelHtml;
         return;
       }
 
+      // Show short summary for selected animal
       showShortSummary(animal);
     });
   });
