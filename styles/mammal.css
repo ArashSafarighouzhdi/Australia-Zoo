@@ -1,0 +1,138 @@
+.mammals-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.animal-panel {
+  border-radius: 8px;
+  padding: 24px;
+  min-height: 220px;
+}
+
+.group-intro-title {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.group-intro-text {
+  max-width: 520px;
+}
+
+.animal-card {
+  display: grid;
+  grid-template-columns: 248px 1fr;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.animal-card img {
+  width: 248px;
+  height: 248px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.animal-body h2 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.animal-line {
+  margin: 2px 0;
+}
+
+.read-more-btn {
+  margin-top: 12px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.read-more-btn .arrow {
+  margin-left: 6px;
+}
+
+.animal-card-full p {
+  margin: 2px 0;
+}
+
+aside.sidebar {
+  grid-area: sidebar;
+  padding: 20px;
+  background-color: #f5f5f0;
+  font-size: 24px;
+  border-radius: 5px;
+}
+
+aside.sidebar * {
+  color: #2d5016;
+  font-family: inherit;
+}
+
+aside.sidebar ul {
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+}
+
+aside.sidebar ul li {
+  margin-bottom: 25px;
+}
+
+aside.sidebar ul li a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #2d5016;
+  border: none;
+  transition: color 0.2s;
+}
+
+aside.sidebar ul li a:hover {
+  color: #1a330c;
+}
+
+aside.sidebar ul li a.active {
+  text-decoration: none !important;
+  border-bottom: 3px solid #2d5016 !important;
+  text-underline-offset: 4px;
+  font-weight: 600;
+  padding-bottom: 3px;
+  display: inline-block;
+}
+
+@media (max-width: 480px) {
+  .animal-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .animal-card img {
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+  }
+
+  .group-intro-title {
+    font-size: 20px;
+  }
+
+  .animal-panel {
+    padding: 16px;
+  }
+
+  .read-more-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  aside.sidebar ul li a.active {
+    border-bottom: 3px solid #2d5016 !important;
+    padding-left: 0;
+  }
+}
