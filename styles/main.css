@@ -43,6 +43,14 @@
 
 .container div.content {
   grid-area: content;
+   background-image: linear-gradient(rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.9)),
+    url("../assets/images/home_bg.png");
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 header {
