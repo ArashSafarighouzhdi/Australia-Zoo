@@ -1,0 +1,96 @@
+/* --- Original Styles --- */
+.mammals-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.animal-panel {
+  background-color: #f9f9f6;
+  border-radius: 8px;
+  padding: 24px;
+  min-height: 220px;
+}
+
+.group-intro-title {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.group-intro-text {
+  max-width: 520px;
+}
+
+.animal-card {
+  display: grid;
+  grid-template-columns: 248px 1fr;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.animal-card img {
+  width: 248px;
+  height: 248px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.animal-body h2 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.animal-line {
+  margin: 2px 0;
+}
+
+.read-more-btn {
+  margin-top: 12px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.read-more-btn .arrow {
+  margin-left: 6px;
+}
+
+.animal-card-full p {
+  margin: 2px 0;
+}
+
+/* ---------------------------------------------
+   Mobile Responsive (iPhone 12 Pro Max 428px)
+----------------------------------------------*/
+@media (max-width: 480px) {
+  .animal-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .animal-card img {
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+  }
+
+  .group-intro-title {
+    font-size: 20px;
+  }
+
+  .animal-panel {
+    padding: 16px;
+  }
+
+  .read-more-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
