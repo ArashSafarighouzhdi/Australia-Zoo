@@ -94,7 +94,6 @@ aside.sidebar ul li a {
   transition: color 0.2s;
 }
 
-/* hover */
 aside.sidebar ul li a:hover {
   color: #1a330c;
 }
