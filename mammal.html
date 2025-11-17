@@ -5,28 +5,20 @@
     <title>Zooly – Mammals</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="styles/style.css" />
-
-    <link rel="stylesheet" href="styles/mammal.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/mammal.css" />
   </head>
   <body>
     <div class="container">
+      <!-- Header -->
       <header>
         <div class="logo-container">
-          <img src="./assets/images/logo.png" class="logo" alt="Zooly logo" />
+          <img src="../images/logo.png" class="logo" alt="Zooly logo" />
           <h1 class="site-title">Zooly</h1>
         </div>
-
         <nav>
-          <ul class="sidebar">
+          <ul class="top-nav">
             <li><a href="index.html">Home</a></li>
-
-            <li><a href="#" data-animal-id="echidna">Echidna</a></li>
-            <li>
-              <a href="#" data-animal-id="tasmanian-devil">Tasmanian Devil</a>
-            </li>
-            <li><a href="#" data-animal-id="quokka">Quokka</a></li>
-
             <li><a href="reptiles.html">Reptiles</a></li>
             <li><a href="birds.html">Birds</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -34,25 +26,32 @@
         </nav>
       </header>
 
-      <div class="sidebar">
+      <!-- Sidebar with animal links -->
+      <aside class="sidebar">
         <ul>
-          <li><a href="#" data-animal-id="echidna">Echidna</a></li>
-          <li>
-            <a href="#" data-animal-id="tasmanian-devil">Tasmanian Devil</a>
-          </li>
-          <li><a href="#" data-animal-id="quokka">Quokka</a></li>
+          <li><a href="#">Echidna</a></li>
+          <li><a href="#">Tasmanian Devil</a></li>
+          <li><a href="#">Quokka</a></li>
+          <li><a href="#">Frill-necked lizard</a></li>
+          <li><a href="#">Hawksbill Turtle</a></li>
+          <li><a href="#">Perentie</a></li>
+          <li><a href="#">Cassowary</a></li>
+          <li><a href="#">Kookaburra</a></li>
+          <li><a href="#">Yellow Tailed Black Cockatoo</a></li>
         </ul>
-      </div>
+      </aside>
 
-      <div class="content mammals-content">
+      <!-- Main content -->
+      <main class="content mammals-content">
         <section class="animal-panel" id="animal-panel"></section>
-      </div>
+      </main>
 
+      <!-- Footer -->
       <footer>
-        <h4>Arash - Chatali -Smita - Raana - Sandra</h4>
+        <h4>Arash - Chatali - Smita - Raana - Sandra</h4>
       </footer>
     </div>
 
-    <script src="js/mammal.js"></script>
+    <script src="../js/mammal.js"></script>
   </body>
 </html>

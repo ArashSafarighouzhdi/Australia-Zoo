@@ -3,7 +3,7 @@ const mammals = [
   {
     id: "echidna",
     name: "Echidna",
-    image: "./assets/images/mammal/image1.png",
+    image: "./images/mammal/image1.png",
     group: "Mammal",
     food: "insects such as ants and termites, beetle larvae and worms.",
     description:
@@ -15,7 +15,7 @@ const mammals = [
   {
     id: "tasmanian-devil",
     name: "Tasmanian Devil",
-    image: "./assets/images/mammal/image2.png",
+    image: "./images/mammal/image2.png",
     group: "Mammal",
     food: "carnivorous; they can eat meat from mammals, birds, reptiles and insects.",
     description:
@@ -27,7 +27,7 @@ const mammals = [
   {
     id: "quokka",
     name: "Quokka",
-    image: "./assets/images/mammal/image3.png",
+    image: "./images/mammal/image3.png",
     group: "Mammal",
     food: "plant eaters, they munch on grasses, leaves and stems.",
     description:
@@ -36,15 +36,18 @@ const mammals = [
     weight: "2.5–5 kg",
     found: "Rottnest Island and south-western Australia"
   }
+
 ];
 
-// Wait for the DOM to load
+// Map link text to animal id
+const linkTextToId = {};
+mammals.forEach(animal => linkTextToId[animal.name] = animal.id);
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Select all sidebar links that have data-animal-id
-  const sidebarLinks = document.querySelectorAll(".sidebar a[data-animal-id]");
+  const sidebarLinks = document.querySelectorAll(".sidebar a");
   const panel = document.getElementById("animal-panel");
 
-  // Default panel content when no animal is selected
+  // Default panel content
   const defaultPanelHtml = `
     <h2 class="group-intro-title">Meet Australia's Marvelous Mammals</h2>
     <p class="group-intro-text">
@@ -53,18 +56,16 @@ document.addEventListener("DOMContentLoaded", () => {
       survive in one of the most diverse ecosystems on Earth.
     </p>
   `;
-
-  // Initialize panel with default content
   panel.innerHTML = defaultPanelHtml;
 
-  // Function to truncate text to a specific length
+  // Truncate function
   function truncate(text, maxLength) {
     if (!text) return "";
     if (text.length <= maxLength) return text;
     return text.slice(0, maxLength) + "…";
   }
 
-  // Display short summary of the selected animal
+  // Show short summary
   function showShortSummary(animal) {
     panel.innerHTML = `
       <article class="animal-card">
@@ -73,24 +74,19 @@ document.addEventListener("DOMContentLoaded", () => {
           <h2>${animal.name}</h2>
           <p class="animal-line">group: ${animal.group}</p>
           <p class="animal-line">food: ${animal.food}</p>
-          <p class="animal-line">
-            description: ${truncate(animal.description, 220)}
-          </p>
-          <button type="button" class="read-more-btn">
-            Read more <span class="arrow">→</span>
-          </button>
+          <p class="animal-line">description: ${truncate(animal.description, 220)}</p>
+          <button type="button" class="read-more-btn">Read more <span class="arrow">→</span></button>
         </div>
       </article>
     `;
 
-    // Add click event to "Read more" button to show full summary
     const btn = panel.querySelector(".read-more-btn");
     if (btn) {
       btn.addEventListener("click", () => showFullSummary(animal));
     }
   }
 
-  // Display full summary of the selected animal
+  // Show full summary
   function showFullSummary(animal) {
     panel.innerHTML = `
       <article class="animal-card animal-card-full">
@@ -108,36 +104,27 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
-  // Add click event to each sidebar link
-  sidebarLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      event.preventDefault(); // Prevent default link behavior
+  // Add click events to sidebar links
+  sidebarLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const isActive = link.classList.contains("active");
+      sidebarLinks.forEach(l => l.classList.remove("active"));
 
-      const isAlreadyActive = link.classList.contains("active");
-
-      // Remove active class from all links
-      sidebarLinks.forEach((l) => l.classList.remove("active"));
-
-      // If clicked link was already active, reset panel to default
-      if (isAlreadyActive) {
+      if (isActive) {
         panel.innerHTML = defaultPanelHtml;
         return;
       }
 
-      // Add active class to clicked link
       link.classList.add("active");
+      const animalId = linkTextToId[link.textContent];
+      const animal = mammals.find(a => a.id === animalId);
 
-      // Find the selected animal by id
-      const animalId = link.dataset.animalId;
-      const animal = mammals.find((a) => a.id === animalId);
-
-      // If animal not found, show default panel
       if (!animal) {
         panel.innerHTML = defaultPanelHtml;
         return;
       }
 
-      // Show short summary for selected animal
       showShortSummary(animal);
     });
   });
