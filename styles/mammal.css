@@ -7,6 +7,7 @@
   border-radius: 8px;
   padding: 24px;
   min-height: 220px;
+  background-color: #ffffff;
 }
 
 .group-intro-title {
@@ -23,6 +24,7 @@
   grid-template-columns: 248px 1fr;
   gap: 24px;
   align-items: flex-start;
+  margin-top: 16px;
 }
 
 .animal-card img {
@@ -59,33 +61,29 @@
   margin: 2px 0;
 }
 
-aside.sidebar {
-  grid-area: sidebar;
-  padding: 20px;
-  background-color: #f5f5f0;
-  font-size: 24px;
-  border-radius: 5px;
-}
-
-aside.sidebar * {
+.sidebar * {
   color: #2d5016;
   font-family: inherit;
 }
 
-aside.sidebar ul {
+.sidebar ul {
   list-style: none;
   margin-top: 20px;
   padding: 0;
 }
 
-aside.sidebar ul li {
-  margin-bottom: 25px;
+.sidebar ul li {
+  margin-bottom: 30px;
 }
 
-aside.sidebar ul li a {
+.sidebar ul li:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar ul li a {
   text-decoration: none;
-  display: inline-block;
-  padding: 0;
+  display: block;
+  gap: 5px;
   line-height: 1.2;
   font-weight: 500;
   color: #2d5016;
@@ -93,11 +91,11 @@ aside.sidebar ul li a {
   transition: color 0.2s;
 }
 
-aside.sidebar ul li a:hover {
+.sidebar ul li a:hover {
   color: #1a330c;
 }
 
-aside.sidebar ul li a.active {
+.sidebar ul li a.active {
   text-decoration: none !important;
   border-bottom: 3px solid #2d5016 !important;
   text-underline-offset: 4px;
@@ -106,7 +104,7 @@ aside.sidebar ul li a.active {
   display: inline-block;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 390px) {
   .animal-card {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -131,7 +129,16 @@ aside.sidebar ul li a.active {
     text-align: center;
   }
 
-  aside.sidebar ul li a.active {
+  .sidebar {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  .sidebar ul li {
+    margin-bottom: 15px;
+  }
+
+  .sidebar ul li a.active {
     border-bottom: 3px solid #2d5016 !important;
     padding-left: 0;
   }
