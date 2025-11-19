@@ -33,15 +33,10 @@ const homepageInfoBox = document.querySelector(".homepage_infobox");
 const contentContainer = document.querySelector(".container .content");
 const contentPanel = contentContainer;
 
-// Populate the homepage_infobox with proper classes
 homepageInfoBox.innerHTML = `
   <h2 class="homepage_img_title">${homepage_content.siteTitle}</h2>
   <p class="homepage_desc">${homepage_content.siteDescription}</p>
 `;
-
-document.addEventListener("DOMContentLoaded", () => {
-  // Content already populated above, no need to do it again
-});
 
 function goHome() {
   contentContainer.id = "";
