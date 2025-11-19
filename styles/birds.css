@@ -22,8 +22,8 @@ nav ul a[aria-current="page"] {
     display: none;
 }
 
-.content > p {
-    max-width: 450px;
+h1 {
+    margin-bottom: 20px;
 }
 
 .info {
