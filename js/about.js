@@ -44,9 +44,9 @@ const teamData = [
     photo: "../images/team/smita.jpg",
     role: "Front End Developer",
     bio: "Dedicated to accuracy and educational value in every detail.",
-    email: "",
+    email: "Smita.Redkar@edu.futuregames.se",
     github: "https://github.com/smitaisverige",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/dr-smita-mithun-redkar-6269b821/",
     responsibilities: [
       " Design and implement the Reptiles Page layout and logic.",
       "Researched and compiled information about Australian animals",
