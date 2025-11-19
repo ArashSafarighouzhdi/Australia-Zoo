@@ -31,26 +31,22 @@ homepageContentTextDescription.textContent = homepage_content.siteDescription;
 let sidebar_list = document.querySelector(".sidebar ul");
 const homepageInfoBox = document.querySelector(".homepage_infobox");
 const contentContainer = document.querySelector(".container .content");
-const contentPanel = contentContainer; 
+const contentPanel = contentContainer;
+
+// Populate the homepage_infobox with proper classes
+homepageInfoBox.innerHTML = `
+  <h2 class="homepage_img_title">${homepage_content.siteTitle}</h2>
+  <p class="homepage_desc">${homepage_content.siteDescription}</p>
+`;
 
 document.addEventListener("DOMContentLoaded", () => {
-  const defaultContentPanelHtml = `
-    <h2 class="homepage_img_title">Welcome to "Zooly" — where nature comes alive!</h2>
-    <p class="homepage_desc">
-      Australia is home to some of the most fascinating creatures on Earth. Explore our mammals, birds, and reptiles
-                      to learn about how they live, what they eat, and why they're so important to our ecosystem.
-                      Select an animal from the sidebar to begin your journey through the wild!.
-    </p>
-  `;
-  contentPanel.innerHTML = defaultContentPanelHtml;
+  // Content already populated above, no need to do it again
 });
 
 function goHome() {
   contentContainer.id = "";
   contentContainer.style.backgroundImage = "";
-  homepageInfoBox.style.display = "block";
 
-  // Clear the content container and restore homepage layout
   contentContainer.innerHTML = `
     <div class ="homepage_infobox">
       <h2 class="homepage_img_title">${homepage_content.siteTitle}</h2>
@@ -117,6 +113,9 @@ function truncate(text, maxLength) {
   return text.slice(0, maxLength) + "…";
 }
 
+// Track active sidebar link
+let activeSidebarLink = null;
+
 sidebar_links.forEach((links) => {
   const sidebarLi = document.createElement("li");
   const sidebarLink = document.createElement("a");
@@ -125,35 +124,33 @@ sidebar_links.forEach((links) => {
   sidebarLink.href = "#";
   sidebarLink.id = links.id;
 
-  let clickTimer = null;
-  let clickCount = 0;
-
   sidebarLink.addEventListener("click", (event) => {
     event.preventDefault();
-    clickCount++;
 
-    if (clickCount === 1) {
-      
-      clickTimer = setTimeout(() => {
-        contentContainer.id = "animal-panel";
-        contentContainer.style.backgroundImage = "none";
-        homepageInfoBox.style.display = "none";
-
-        
-        const selectedAnimal = mammals.find(
-          (animal) => animal.name === links.text
-        );
-
-        if (selectedAnimal) {
-          showShortSummary(selectedAnimal);
-        }
-        clickCount = 0;
-      }); 
-    } else if (clickCount === 2) {
-      
-      clearTimeout(clickTimer);
+    if (activeSidebarLink === sidebarLink) {
+      sidebarLink.classList.remove("active");
+      activeSidebarLink = null;
       goHome();
-      clickCount = 0;
+      console.log("Clicked active link - returning to home");
+      return;
+    }
+
+    if (activeSidebarLink) {
+      activeSidebarLink.classList.remove("active");
+    }
+
+    sidebarLink.classList.add("active");
+    activeSidebarLink = sidebarLink;
+
+    contentContainer.id = "animal-panel";
+    contentContainer.style.backgroundImage = "none";
+    homepageInfoBox.style.display = "none";
+
+    const selectedAnimal = mammals.find((animal) => animal.name === links.text);
+
+    if (selectedAnimal) {
+      showShortSummary(selectedAnimal);
+      console.log("Displayed: " + links.text);
     }
   });
 
