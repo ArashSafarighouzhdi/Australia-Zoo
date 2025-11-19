@@ -3,6 +3,38 @@
   color: #2d5016; /* Match main page */
 }
 
+.welcome-message{
+  background-color: #ffffff;
+  border-radius: 8px;
+    line-height: 2;
+  min-height: 220px;
+  padding: 24px;
+}
+
+.group-intro-title {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.group-intro-text {
+  max-width: 520px;
+}
+
+
+.animal-summary {
+  background-color: #ffffff;
+  border-radius: 8px;
+  min-height: 220px;
+  padding: 24px; 
+}
+
+.animal-full{
+  background-color: #ffffff;
+  border-radius: 8px;
+  min-height: 220px;
+  padding: 24px;  
+}
+
 .animal-info {
   align-items: flex-start;
   border-radius: 8px;
@@ -26,13 +58,14 @@
 
 
 button {
-  margin-top: 12px;
-  padding: 8px 16px;
+  background-color: #fff;
   border-radius: 4px;
   border: 1px solid #000;
-  background-color: #fff;
   cursor: pointer;
   font-size: 14px;
+  margin-top: 12px;
+  padding: 8px 16px;
+
 }
 
 
@@ -46,10 +79,70 @@ button {
 }
 
 .sidebar .tab.active {  
-  text-decoration: none !important;  /* from mammals page  */
   border-bottom: 3px solid #2d5016 !important;
-  text-underline-offset: 4px;
+  display: inline-block;
   font-weight: 600;
   padding-bottom: 3px;
-  display: inline-block;
+  text-decoration: none !important;  /* from mammals page  */
+  text-underline-offset: 4px;
+
+}
+
+@media (max-width: 390px) {
+  .animal-summary,
+  .animal-full {
+    display: block;
+    padding: 16px;
+  }
+
+  .animal-info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .animal-image {
+    border-radius: 6px;
+    height: auto;
+    max-width: 330px;
+    width: 100%;
+  }
+
+  .details {
+    width: 100%;
+  }
+
+  .details p {
+    font-size: 1em;
+  }
+
+  h2,
+  .group-intro-title {
+    font-size: 20px;
+  }
+
+   .readMoreBtn,
+  .backBtn {
+    font-size: 16px;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .sidebar {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  .sidebar ul li {
+    margin-bottom: 15px;
+  }
+
+  .sidebar ul li a.active {
+    border-bottom: 3px solid #2d5016 !important;
+    padding-left: 0;
+  }
 }
