@@ -3,12 +3,12 @@
   color: #2d5016; /* Match main page */
 }
 
-.welcome-message{
+.welcome-message {
   background-color: #ffffff;
   border-radius: 8px;
-    line-height: 2;
   min-height: 220px;
   padding: 24px;
+  line-height: 2;
 }
 
 .group-intro-title {
@@ -20,42 +20,45 @@
   max-width: 520px;
 }
 
-
-.animal-summary {
+.animal-summary,
+.animal-full {
   background-color: #ffffff;
   border-radius: 8px;
   min-height: 220px;
-  padding: 24px; 
-}
-
-.animal-full{
-  background-color: #ffffff;
-  border-radius: 8px;
-  min-height: 220px;
-  padding: 24px;  
+  padding: 24px;
 }
 
 .animal-info {
   align-items: flex-start;
-  border-radius: 8px;
   display: flex;
+  flex-direction: row;
   gap: 20px;
   padding: 15px;
-
 }
 
 .animal-image {
   border-radius: 5px;
   height: auto;
-  width: 250px; 
+  width: 250px;
 }
 
-/* Details text from */
 .details p {
   font-size: 1.1em;
   margin: 8px 0;
 }
 
+.short-description {
+  font-size: 1.1em;
+  margin-top: 20px;
+  line-height: 1.7;
+}
+
+.long-description {
+  font-size: 1.1em;
+  line-height: 1.7;
+  margin-top: 20px;
+
+}
 
 button {
   background-color: #fff;
@@ -68,6 +71,13 @@ button {
 
 }
 
+.readMoreBtn,
+.backBtn {
+  display: block;
+  margin-top: 20px;
+  width: auto;
+
+}
 
 .sidebar {
   background-color: #f5f5f0;
@@ -76,6 +86,7 @@ button {
   font-size: 24px;
   margin-bottom: 15px;
   padding: 12px 15px;
+
 }
 
 .sidebar .tab.active {  
@@ -83,53 +94,56 @@ button {
   display: inline-block;
   font-weight: 600;
   padding-bottom: 3px;
-  text-decoration: none !important;  /* from mammals page  */
+  text-decoration: none !important;
   text-underline-offset: 4px;
-
 }
 
 @media (max-width: 390px) {
+
   .animal-summary,
   .animal-full {
-    display: block;
     padding: 16px;
   }
 
   .animal-info {
-    align-items: center;
-    display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 0;
+    align-items: center;
     text-align: center;
+    padding: 0;
+    gap: 16px;
   }
 
   .animal-image {
-    border-radius: 6px;
-    height: auto;
-    max-width: 330px;
     width: 100%;
+    max-width: 330px;
   }
 
   .details {
     width: 100%;
+    text-align: left;
   }
 
   .details p {
     font-size: 1em;
   }
 
+  .short-description,
+  .long-description {
+    text-align: left;
+    width: 100%;
+  }
+
+  .readMoreBtn,
+  .backBtn {
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
   h2,
   .group-intro-title {
     font-size: 20px;
-  }
-
-   .readMoreBtn,
-  .backBtn {
-    font-size: 16px;
-    text-align: center;
-    padding: 10px;
-    width: 100%;
   }
 
   .sidebar {
@@ -143,6 +157,5 @@ button {
 
   .sidebar ul li a.active {
     border-bottom: 3px solid #2d5016 !important;
-    padding-left: 0;
   }
 }
