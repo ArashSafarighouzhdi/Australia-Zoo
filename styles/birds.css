@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+nav ul a[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+} 
+
+.sidebar {
+    display: block;
+}
+
+.hide-intro > h1,
+.hide-intro > p {
+    display: none;
+}
+
+.content > p {
+    max-width: 450px;
+}
+
+.info {
+    display: none; 
+    margin: 16px;
+    padding: 16px;
+}
+
+.info.active {
+    display: block;
+}
+
+.sidebar-tab.active {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+.sidebar-tab {
+    cursor: pointer;
+}
+
+.sidebar-tab:hover {
+   color: #102304;
+}
+
+.info .top-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 16px;
+}
+
+.info .top-section img {
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 0;
+    border-radius: 8px;
+}
+
+.info .animal-details h2 {
+    margin-top: 0 0 8px;
+}
+
+.info .animal-details p {
+    margin: 4px 0;
+}
+
+.info .description {
+    margin-top: 12px;
+    line-height: 1.5;
+}
+
+.description.collapsed {
+    height: 3em;  
+    overflow: hidden;
+}
+
+.description.collapsed .more {
+    display: none;
+}
+
+.read-more {
+    background: none;
+    border: 2px solid  #2d5016;
+    border-radius: 5px;
+    cursor: pointer;
+    font: inherit;
+    padding: 8px;
+    margin-top: 8px;
+}
+
+.read-more:hover {
+    background-color: #f5f5f0;
+}
+
+a, button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.2);
+}
+
+a:focus, button:focus {
+  outline: 1px solid #f5f5f0;
+}
