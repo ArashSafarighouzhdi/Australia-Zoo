@@ -59,7 +59,9 @@ function showShortSummary(animal) {
         <img src="${animal.image}" alt="${animal.name}">
         <div class="animal-body">
           <h2>${animal.name}</h2>
-          <p class="animal-line">Group: ${animal.group}</p>
+          <p><strong>Group:</strong> 
+          <a href="${animal.group.toLowerCase()}s.html">${animal.group}</a>
+          </p>
           <p class="animal-line">Food: ${animal.food}</p>
           <p class="animal-line">Description: ${truncate(
             animal.description,
@@ -83,7 +85,9 @@ function showFullSummary(animal) {
         <img src="${animal.image}" alt="${animal.name}">
         <div class="animal-body">
           <h2>${animal.name}</h2>
-          <p class="animal-line">group: ${animal.group}</p>
+          <p><strong>Group:</strong> 
+          <a href="${animal.group.toLowerCase()}s.html">${animal.group}</a>
+          </p>
           <p class="animal-line">food: ${animal.food}</p>
           <p class="animal-line">description: ${animal.description}</p>
           <p class="animal-line">length: ${animal.length}</p>
