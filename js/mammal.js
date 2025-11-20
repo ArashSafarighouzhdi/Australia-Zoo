@@ -1,5 +1,14 @@
-
-function Animal(name, group, food, description, lifespan, length, weight, found, image) {
+function Animal(
+  name,
+  group,
+  food,
+  description,
+  lifespan,
+  length,
+  weight,
+  found,
+  image
+) {
   this.name = name;
   this.group = group;
   this.food = food;
@@ -10,7 +19,6 @@ function Animal(name, group, food, description, lifespan, length, weight, found,
   this.found = found;
   this.image = image;
 }
-
 
 let echidna = new Animal(
   "Echidna",
@@ -48,8 +56,7 @@ let quokka = new Animal(
   "./images/mammal/image3.png"
 );
 
-const animals = [echidna, tasmanianDevil, quokka];
-
+const mammals = [echidna, tasmanianDevil, quokka];
 
 let mainContent = document.querySelector(".content");
 
@@ -61,12 +68,10 @@ let groupTypeMessageIntro = document.createElement("p");
 groupTypeMessageIntro.textContent = `Warm-blooded, fur-covered, and full of character — Australia’s mammals come in all shapes and sizes. From egg-laying echidnas to curious quokkas, these animals nurture their young in unique ways and survive in one of the most diverse ecosystems on Earth.`;
 mainContent.appendChild(groupTypeMessageIntro);
 
-
 const sidebarContent = document.querySelector(".sidebar");
 mainContent = document.querySelector(".content");
 
-animals.forEach((animal) => {
-  
+mammals.forEach((animal) => {
   const tab = document.createElement("a");
   tab.textContent = animal.name;
   tab.classList.add("sidebar-tab");
@@ -75,7 +80,6 @@ animals.forEach((animal) => {
   wrapper.classList.add("wrapper");
   wrapper.appendChild(tab);
   sidebarContent.appendChild(wrapper);
-
 
   const className = animal.name.toLowerCase().replaceAll(" ", "-");
   const infoDiv = document.createElement("div");
@@ -136,7 +140,6 @@ animals.forEach((animal) => {
   infoDiv.append(topSection, description, button);
   mainContent.appendChild(infoDiv);
 });
-
 
 const allTabs = Array.from(document.querySelectorAll(".sidebar-tab"));
 const contentDivs = Array.from(document.querySelectorAll(".info"));

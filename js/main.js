@@ -5,8 +5,8 @@ const sidebar_links = [
   { text: "Frill-necked lizard", url: "", id: "frill-neckedlizardLink" },
   { text: "Hawksbill Sea Turtle", url: "", id: "hawksbillturtleLink" },
   { text: "Perentie", url: "", id: "perentieLink" },
-  { text: "Cassowary", url: "", id: "zassowaryLink" },
-  { text: "Kookaburra", url: "", id: "kookaburraLink" },
+  { text: "cassowary", url: "", id: "cassowaryLink" },
+  { text: "kookaburra", url: "", id: "kookaburraLink" },
   {
     text: "Yellow Tailed Black Cockatoo",
     url: "",
@@ -52,34 +52,9 @@ function goHome() {
 
   console.log("Navigated back to Home.");
 }
-// Show short summary
-function showShortSummary(animal) {
-  contentPanel.innerHTML = `
-      <article class="animal-card">
-        <img src="${animal.image}" alt="${animal.name}">
-        <div class="animal-body">
-          <h2>${animal.name}</h2>
-          <p><strong>Group:</strong> 
-          <a href="${animal.group.toLowerCase()}s.html">${animal.group}</a>
-          </p>
-          <p class="animal-line"><strong>Food:</strong> ${animal.food}</p>
-          <p class="animal-line"><strong>Description:</strong> ${truncate(
-            animal.description,
-            220
-          )}</p>
-          <button type="button" class="read-more-btn">Read more </button>
-        </div>
-      </article>
-    `;
-
-  const btn = contentPanel.querySelector(".read-more-btn");
-  if (btn) {
-    btn.addEventListener("click", () => showFullSummary(animal));
-  }
-}
 
 // Show full summary
-function showFullSummary(animal) {
+function showSummary(animal) {
   contentPanel.innerHTML = `
       <article class="animal-card animal-card-full">
         <img src="${animal.image}" alt="${animal.name}">
@@ -89,10 +64,10 @@ function showFullSummary(animal) {
           <a href="${animal.group.toLowerCase()}s.html">${animal.group}</a>
           </p>
           <p class="animal-line"><strong>Food: </strong> ${animal.food}</p>
-          <p class="animal-line"><strong>Description: </strong> ${animal.description}</p>
-          <p class="animal-line"><strong>Length:</strong> ${animal.length}</p>
-          <p class="animal-line"><strong>Weight:</strong> ${animal.weight}</p>
-          <p class="animal-line"><strong>Found:</strong> ${animal.found}</p>
+          <p class="animal-line"><strong>Description: </strong> ${
+            animal.description
+          }</p>
+          
         </div>
       </article>
     `;
@@ -117,10 +92,11 @@ function truncate(text, maxLength) {
 let activeSidebarLink = null;
 
 // Combine all data arrays into one master list
-const birdAnimals = typeof animals !== "undefined" ? animals : [];
+const birdAnimals = typeof birds !== "undefined" ? birds : [];
 const reptileAnimals = typeof reptiles !== "undefined" ? reptiles : [];
 const mammalAnimals = typeof mammals !== "undefined" ? mammals : [];
 const allAnimals = [].concat(mammalAnimals, birdAnimals, reptileAnimals);
+console.log(allAnimals);
 
 sidebar_links.forEach((links) => {
   const sidebarLi = document.createElement("li");
@@ -160,7 +136,7 @@ sidebar_links.forEach((links) => {
     );
 
     if (selectedAnimal) {
-      showShortSummary(selectedAnimal);
+      showSummary(selectedAnimal);
       console.log("Displayed: " + selectedAnimal.name);
     }
   });
