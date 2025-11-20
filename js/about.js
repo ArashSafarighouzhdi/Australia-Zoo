@@ -26,7 +26,7 @@ const teamData = [
     photo: "../images/team/chaitali.jpg",
     role: "FullStack Developer",
     bio: "Passionate Full-Stack Engineer skilled in Django, React, and Next.js, building secure and scalable web applications.",
-    email: "",
+    email: "chaitali.deore@edu.futuregames.se",
     github: "https://github.com/Chaitali786",
     linkedin: "https://www.linkedin.com/in/chaitalideore786/",
     responsibilities: [
