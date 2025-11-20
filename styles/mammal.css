@@ -3,8 +3,6 @@
 }
 
 body {
-  display: flex;
-  flex-wrap: wrap;
   margin: 0;
 }
 
@@ -122,9 +120,15 @@ button:focus {
 /* ---------- MOBILE ≤ 390px ---------- */
 
 @media (max-width: 390px) {
+  .info {
+    margin: 12px 8px;
+    padding: 12px;
+  }
+
   .info .top-section {
     flex-direction: column;
     align-items: center;
+    gap: 12px;
   }
 
   .info .top-section img {
@@ -143,7 +147,7 @@ button:focus {
 
   .info .animal-details {
     display: block;
-    margin-top: 10px;
+    margin-top: 8px;
   }
 
   .info .animal-details h2,
