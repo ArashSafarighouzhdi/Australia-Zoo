@@ -62,12 +62,12 @@ function showShortSummary(animal) {
           <p><strong>Group:</strong> 
           <a href="${animal.group.toLowerCase()}s.html">${animal.group}</a>
           </p>
-          <p class="animal-line">Food: ${animal.food}</p>
-          <p class="animal-line">Description: ${truncate(
+          <p class="animal-line"><strong>Food:</strong> ${animal.food}</p>
+          <p class="animal-line"><strong>Description:</strong> ${truncate(
             animal.description,
             220
           )}</p>
-          <button type="button" class="read-more-btn">Read more <span class="arrow">→</span></button>
+          <button type="button" class="read-more-btn">Read more </button>
         </div>
       </article>
     `;
@@ -88,11 +88,11 @@ function showFullSummary(animal) {
           <p><strong>Group:</strong> 
           <a href="${animal.group.toLowerCase()}s.html">${animal.group}</a>
           </p>
-          <p class="animal-line">food: ${animal.food}</p>
-          <p class="animal-line">description: ${animal.description}</p>
-          <p class="animal-line">length: ${animal.length}</p>
-          <p class="animal-line">weight: ${animal.weight}</p>
-          <p class="animal-line">Found: ${animal.found}</p>
+          <p class="animal-line"><strong>Food: </strong> ${animal.food}</p>
+          <p class="animal-line"><strong>Description: </strong> ${animal.description}</p>
+          <p class="animal-line"><strong>Length:</strong> ${animal.length}</p>
+          <p class="animal-line"><strong>Weight:</strong> ${animal.weight}</p>
+          <p class="animal-line"><strong>Found:</strong> ${animal.found}</p>
         </div>
       </article>
     `;
