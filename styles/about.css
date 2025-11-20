@@ -137,6 +137,10 @@
   flex-shrink: 0;
 }
 
+.contact-link:hover svg {
+  stroke: #ffffff;
+}
+
 /* long details */
 .member-details {
   color: #666;
