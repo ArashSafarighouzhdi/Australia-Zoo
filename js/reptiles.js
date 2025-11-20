@@ -61,7 +61,8 @@ function showWelcomeMessage() {
       </div>
     `;
 }
-
+//<p><strong>Lifespan:</strong> ${animal.lifespan}</p>//
+// life span removed from short summary//
 function showAnimalSummary(animal) {
   contentDiv.innerHTML = `
     <div class="animal-summary" id="animal-panel">
@@ -71,7 +72,7 @@ function showAnimalSummary(animal) {
         <img src="${animal.image}" class="animal-image" alt="${animal.name}">
         <div class="details">
           <h2>${animal.name}</h2>
-          <p><strong>Lifespan:</strong> ${animal.lifespan}</p>
+           
           <p><strong>Group:</strong> ${animal.group}</p>
           <p><strong>Food:</strong> ${animal.food}</p>
         </div>

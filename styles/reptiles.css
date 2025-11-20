@@ -3,11 +3,15 @@
   color: #2d5016; /* Match main page */
 }
 
-.welcome-message {
+/*.welcome-message {
   background-color: #ffffff;
   border-radius: 8px;
   min-height: 220px;
   padding: 24px;
+  line-height: 2;
+}*/
+
+.welcome-message{
   line-height: 2;
 }
 
@@ -20,14 +24,14 @@
   max-width: 520px;
 }
 
-.animal-summary,
+/*.animal-summary,
 .animal-full {
   background-color: #ffffff;
   border-radius: 8px;
   min-height: 220px;
   padding: 24px;
 }
-
+*/
 .animal-info {
   align-items: flex-start;
   display: flex;
