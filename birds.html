@@ -1,42 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birds Page</title>
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/birds.css">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Zooly – Birds</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <link rel="stylesheet" href="./styles/birds.css" />
+
     <script defer src="./js/birds.js"></script>
-</head>
-<body>
+  </head>
+
+  <body>
     <div class="container">
-        <header>
-            <div class = "logo-container">
-                <img src="./images/logo.png" class ="logo"><img>
-                <h1 class ="site-title">Zooly</h1>
-            </div>   
-            <nav>
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li class="dropdown">
-                        <a class="active" href="#">Animals</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="./mammals.html">Mammals</a></li>
-                             <li><a href="./reptiles.html">Reptiles</a></li>
-                            <li><a href="./birds.html" aria-current="page">Birds</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="./about.html">About</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="sidebar">
+      <!-- HEADER -->
+      <header>
+        <div class="logo-container">
+          <img src="./images/logo.png" class="logo" alt="Zooly logo" />
+          <h1 class="site-title">Zooly</h1>
         </div>
-        <div class="content" id="animal-panel">
-        </div>
-        <footer>
-            <p>Team Zooly © 2025 Australia Zoo. All rights reserved.</p>
-        </footer>
-  </div>   
-</body>
+
+        <nav>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+
+            <li class="dropdown">
+              <a class="active" href="#">Animal</a>
+              <ul class="dropdown-menu">
+                <li><a href="./mammals.html">Mammals</a></li>
+                <li><a href="./reptiles.html">Reptiles</a></li>
+                <li>
+                  <a class="active" aria-current="page" href="./birds.html">
+                    Birds
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li><a href="./about.html">About</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="sidebar" id="birds-sidebar"></div>
+
+      <main class="content birds-content" id="animal-panel"></main>
+
+      <footer>
+        <p>Team Zooly © 2025 Australia Zoo. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
 </html>
