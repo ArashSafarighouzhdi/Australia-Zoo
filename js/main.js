@@ -3,7 +3,7 @@ const sidebar_links = [
   { text: "Tasmanian Devil", url: "", id: "tasmaniandevilLink" },
   { text: "Quokka", url: "", id: "quokkaLink" },
   { text: "Frill-necked lizard", url: "", id: "frill-neckedlizardLink" },
-  { text: "Hawksbill Turtle", url: "", id: "hawksbillturtleLink" },
+  { text: "Hawksbill Sea Turtle", url: "", id: "hawksbillturtleLink" },
   { text: "Perentie", url: "", id: "perentieLink" },
   { text: "Cassowary", url: "", id: "zassowaryLink" },
   { text: "Kookaburra", url: "", id: "kookaburraLink" },
@@ -40,7 +40,8 @@ homepageInfoBox.innerHTML = `
 
 function goHome() {
   contentContainer.id = "";
-  contentContainer.style.backgroundImage = "";
+  // restore homepage background
+  contentContainer.classList.add("home-bg");
 
   contentContainer.innerHTML = `
     <div class ="homepage_infobox">
@@ -58,9 +59,9 @@ function showShortSummary(animal) {
         <img src="${animal.image}" alt="${animal.name}">
         <div class="animal-body">
           <h2>${animal.name}</h2>
-          <p class="animal-line">group: ${animal.group}</p>
-          <p class="animal-line">food: ${animal.food}</p>
-          <p class="animal-line">description: ${truncate(
+          <p class="animal-line">Group: ${animal.group}</p>
+          <p class="animal-line">Food: ${animal.food}</p>
+          <p class="animal-line">Description: ${truncate(
             animal.description,
             220
           )}</p>
@@ -111,6 +112,12 @@ function truncate(text, maxLength) {
 // Track active sidebar link
 let activeSidebarLink = null;
 
+// Combine all data arrays into one master list
+const birdAnimals = typeof animals !== "undefined" ? animals : [];
+const reptileAnimals = typeof reptiles !== "undefined" ? reptiles : [];
+const mammalAnimals = typeof mammals !== "undefined" ? mammals : [];
+const allAnimals = [].concat(mammalAnimals, birdAnimals, reptileAnimals);
+
 sidebar_links.forEach((links) => {
   const sidebarLi = document.createElement("li");
   const sidebarLink = document.createElement("a");
@@ -138,14 +145,19 @@ sidebar_links.forEach((links) => {
     activeSidebarLink = sidebarLink;
 
     contentContainer.id = "animal-panel";
-    contentContainer.style.backgroundImage = "none";
+
+    contentContainer.classList.remove("home-bg");
     homepageInfoBox.style.display = "none";
 
-    const selectedAnimal = mammals.find((animal) => animal.name === links.text);
+    // Find the animal in any group (case-insensitive, partial match)
+    const linkTextLower = links.text.toLowerCase();
+    const selectedAnimal = allAnimals.find((animal) =>
+      animal.name.toLowerCase().includes(linkTextLower)
+    );
 
     if (selectedAnimal) {
       showShortSummary(selectedAnimal);
-      console.log("Displayed: " + links.text);
+      console.log("Displayed: " + selectedAnimal.name);
     }
   });
 
