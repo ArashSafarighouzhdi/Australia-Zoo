@@ -3,8 +3,6 @@
 }
 
 body {
-    display: flex;
-    flex-wrap: wrap;
     margin: 0;
 }
 
@@ -112,6 +110,13 @@ a:focus, button:focus {
   outline: 1px solid #f5f5f0;
 }
 
+.sub-title {
+    font-size: 0.95rem;
+    line-height: 2;
+    max-width: 520px;  
+    margin: 10px 0 24px;  
+}
+
 @media (max-width: 390px) {
 
     .info .top-section {
@@ -156,5 +161,3 @@ a:focus, button:focus {
         margin-top: 10px;
     }
 }
-
-

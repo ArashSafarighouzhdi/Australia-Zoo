@@ -51,10 +51,12 @@ const animals = [cassowary, kookaburra, yellowTailedBlackCockatoo];
 let mainContent = document.querySelector(".content");
 
 let groupTypeMessageHeading = document.createElement("h1");
+groupTypeMessageHeading.classList.add("title")
 groupTypeMessageHeading.textContent = `Australia's Feathered Treasures`;
 mainContent.appendChild(groupTypeMessageHeading);
 
 let groupTypeMessageIntro = document.createElement("p");
+groupTypeMessageIntro.classList.add("sub-title")
 groupTypeMessageIntro.textContent = `From the laughing kookaburra to the striking yellow-tailed black cockatoo, Australia’s birds fill the skies with color and song.
 These feathered wonders play a vital role in nature — spreading seeds, keeping balance, and brightening the wild with their calls.`;
 mainContent.appendChild(groupTypeMessageIntro);
