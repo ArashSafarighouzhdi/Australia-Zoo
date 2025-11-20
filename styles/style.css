@@ -133,6 +133,12 @@
   margin: 2px 0;
 }
 
+.animal-card img {
+  width: 250px;
+  height: 250px;
+  border-radius: 8px;
+}
+
 .homepage_infobox {
   display: flex;
   flex-direction: column;
