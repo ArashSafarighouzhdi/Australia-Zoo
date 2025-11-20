@@ -3,7 +3,6 @@
   margin: 0;
 }
 
-
 .container {
   display: grid;
   grid-template-areas:
@@ -20,7 +19,6 @@
 .container div {
   padding: 10px;
 }
-
 
 .container .sidebar {
   grid-area: sidebar;
@@ -68,7 +66,6 @@
   display: inline-block;
 }
 
-
 .container .content {
   grid-area: content;
   color: inherit;
@@ -78,9 +75,9 @@
   overflow: auto;
 }
 
-
 .container .content.home-bg {
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../images/home_bg.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url("../images/home_bg.png");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -136,7 +133,6 @@
   margin: 2px 0;
 }
 
-
 .homepage_infobox {
   display: flex;
   flex-direction: column;
@@ -166,7 +162,6 @@
   width: 100%;
 }
 
-
 header {
   grid-area: header;
   display: flex;
@@ -193,7 +188,6 @@ header {
   object-fit: contain;
 }
 
-
 header nav ul {
   list-style: none;
   display: flex;
@@ -216,9 +210,7 @@ header nav a {
 header nav a.active {
   font-weight: bold;
   text-decoration: underline;
-
 }
-
 
 .dropdown-menu {
   display: none;
@@ -253,7 +245,6 @@ header nav a.active {
   display: block;
 }
 
-
 footer {
   grid-area: footer;
   text-align: center;
@@ -263,8 +254,11 @@ footer {
   padding: 10px;
 }
 
-
-@media (max-width: 390px) {
+/* Phones + small tablets: up to 768px */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
 
   .container {
     grid-template-areas:
@@ -273,28 +267,27 @@ footer {
       "sidebar"
       "footer";
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    min-height: auto;
+    gap: 0;
     padding: 0;
   }
 
-
-  .container .content {
-    min-height: 60vh;
-    padding: 20px;
-  }
-
+  /* Header smaller */
   header {
     flex-direction: row;
     justify-content: space-between;
-    padding: 6px 10px;
+    align-items: center;
+    padding: 8px 10px;
     gap: 10px;
   }
 
   .logo {
-    height: 32px;
+    height: 40px; /* works on all phones */
   }
 
   .site-title {
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
 
   header nav ul {
@@ -302,7 +295,7 @@ footer {
   }
 
   header nav a {
-    font-size: 15px;
+    font-size: 14px;
     padding: 4px 6px;
   }
 
@@ -318,22 +311,30 @@ footer {
     padding: 8px 14px;
   }
 
-
-  .sidebar {
-    font-size: 17px;
-    padding: 12px;
+  .container .sidebar {
     width: 100% !important;
+    font-size: 18px;
+    padding: 12px 16px;
   }
 
-  .sidebar ul li {
+  .container .sidebar ul li {
     margin-bottom: 12px;
   }
 
+  .container .content {
+    padding: 16px 12px 20px;
+    min-height: auto;
+  }
+
+  .container .content.home-bg {
+    background-position: center center;
+    padding: 16px 12px 20px;
+  }
 
   .homepage_infobox {
-    bottom: 8%;
-    left: 6%;
-    max-width: 80%;
+    position: static;
+    max-width: 100%;
+    margin-top: 16px;
   }
 
   .homepage_img_title {
@@ -342,7 +343,7 @@ footer {
   }
 
   .homepage_desc {
-    font-size: 1em;
+    font-size: 0.95em;
   }
 
   footer {
