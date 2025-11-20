@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  color: #2d5016; /* Match main page */
+  color: #2d5016;
 }
 
 /*.welcome-message {
@@ -161,5 +161,7 @@ button {
 
   .sidebar ul li a.active {
     border-bottom: 3px solid #2d5016 !important;
+    
+
   }
 }
