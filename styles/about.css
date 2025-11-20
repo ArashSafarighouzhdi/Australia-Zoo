@@ -27,7 +27,6 @@
 }
 
 .default-message p {
-  color: #666;
   line-height: 1.8;
   margin-bottom: 15px;
   font-size: 1.1em;
@@ -94,7 +93,6 @@
 }
 
 .member-info p {
-  color: #666;
   margin-top: 10px;
   line-height: 1.6;
 }
