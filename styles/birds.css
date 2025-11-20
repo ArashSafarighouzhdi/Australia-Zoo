@@ -26,6 +26,10 @@ h1 {
     margin-bottom: 20px;
 }
 
+h2 {
+    margin-bottom: 20px;
+}
+
 .info {
     display: none; 
     margin: 16px;
@@ -107,3 +111,50 @@ a, button {
 a:focus, button:focus {
   outline: 1px solid #f5f5f0;
 }
+
+@media (max-width: 390px) {
+
+    .info .top-section {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .info .top-section img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .info .animal-details,
+    .info .description,
+    .info .read-more {
+        width: 100%;
+        text-align: left;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .info .animal-details {
+        display: block; 
+    }
+
+    .info .animal-details h2,
+    .info .animal-details p {
+        text-align: left;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .info .animal-details {
+        margin-top: 10px;
+    }
+
+    .read-more {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+
