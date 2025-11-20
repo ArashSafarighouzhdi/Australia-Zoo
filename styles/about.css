@@ -1,7 +1,7 @@
 .sidebar h3 {
   font-size: 1.5em;
   margin-bottom: 15px;
-  color: #2D5016;
+  color: #2d5016;
 }
 
 #teamList li a {
@@ -46,6 +46,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -61,18 +62,26 @@
   border-bottom: 2px solid #f0ede4;
 }
 
+/* avatar box */
 .member-image {
   width: 150px;
   height: 150px;
-  background: linear-gradient(135deg, #2d5016, #4a7c2a);
-  border-radius: 10px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   font-size: 3em;
   color: white;
   font-weight: bold;
-  flex-shrink: 0;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+
+  object-fit: cover;
 }
 
 .member-info h2 {
@@ -128,6 +137,11 @@
   flex-shrink: 0;
 }
 
+.contact-link:hover svg {
+  stroke: #ffffff;
+}
+
+/* long details */
 .member-details {
   color: #666;
   line-height: 1.8;
@@ -159,11 +173,33 @@ footer p {
   margin: 5px 0;
 }
 
+/* ---------- MOBILE & SMALL TABLETS ≤ 768px ---------- */
+
 @media (max-width: 768px) {
+  .default-message {
+    margin: 0 10px 20px;
+    text-align: left;
+  }
+
+  .default-message h2 {
+    font-size: 1.6em;
+  }
+
+  .default-message p {
+    font-size: 1em;
+  }
+
+  .member-profile {
+    margin: 0 10px 20px;
+  }
+
   .member-header {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
   }
 
   .member-image {
@@ -173,39 +209,55 @@ footer p {
   }
 
   .member-info h2 {
-    font-size: 1.5em;
+    font-size: 1.6em;
+    margin-bottom: 8px;
+  }
+
+  .member-role {
+    font-size: 0.85em;
+    padding: 6px 12px;
+  }
+
+  .member-info p {
+    font-size: 0.95em;
+  }
+
+  .member-details {
+    font-size: 0.95em;
+  }
+
+  .member-details h3 {
+    font-size: 1.3em;
+  }
+
+  .member-details ul {
+    padding-left: 16px;
   }
 
   .contact-links {
     justify-content: center;
   }
 
-  .default-message h2 {
-    font-size: 1.5em;
+  .contact-link {
+    font-size: 0.9em;
+    padding: 8px 12px;
   }
 
-  .member-details h3 {
-    font-size: 1.3em;
+  .sidebar {
+    font-size: 18px;
+    padding: 15px;
   }
-}
 
-.member-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  background: linear-gradient(135deg, #2d5016, #4a7c2a);
-  font-size: 3em;
-  color: white;
-  font-weight: bold;
-}
+  .sidebar ul li {
+    margin-bottom: 15px;
+  }
 
-.member-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  #teamList li a {
+    display: inline-block;
+  }
+
+  #teamList li a.active {
+    border-bottom: 3px solid #2d5016;
+    padding-left: 0;
+  }
 }

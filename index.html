@@ -3,81 +3,47 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/mammal.css" />
+    <script src="./js/mammal.js"></script>
+    <script src="./js/reptiles.js"></script>
+    <script src="./js/birds.js"></script>
+    <script src="./js/main.js" defer></script>
   </head>
 
   <body>
     <div class="container">
       <header>
         <div class="logo-container">
-          <img src="./images/logo.png" class="logo" /><img />
+          <img src="./images/logo.png" class="logo" />
           <h1 class="site-title">Zooly</h1>
         </div>
-
         <nav>
           <ul>
-            <li><a class="active" href="#">Home</a></li>
-            <li><a href="./mammals.html">Mammals</a></li>
-            <li><a href="#">Reptiles</a></li>
-            <li><a href="#">Birds</a></li>
+            <li><a class="active" href="./index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#">Animals</a>
+              <ul class="dropdown-menu">
+                <li><a href="./mammals.html">Mammals</a></li>
+                <li><a href="./reptiles.html">Reptiles</a></li>
+                <li><a href="./birds.html">Birds</a></li>
+              </ul>
+            </li>
             <li><a href="./about.html">About</a></li>
           </ul>
         </nav>
       </header>
-
       <div class="sidebar">
-        <ul>
-          <li><a href="#">Echidna</a></li>
-          <li><a href="#">Tasmanian Devil</a></li>
-          <li><a href="#">Quokka</a></li>
-          <li><a href="#">Frill-necked lizard</a></li>
-          <li><a href="#">Hawksbill Turtle</a></li>
-          <li><a href="#">Perentie</a></li>
-          <li><a href="#">Cassowary</a></li>
-          <li><a href="#">Kookaburra</a></li>
-          <li><a href="#">Yellow Tailed Black Cockatoo</a></li>
-        </ul>
+        <ul></ul>
       </div>
-      <div class="content">
-        <h3>Lorem Ipsum</h3>
-        <p>
-          Lorem ipsum odor amet, consectetuer adipiscing elit. Ridiculus sit
-          nisl laoreet facilisis aliquet. Potenti dignissim litora eget montes
-          rhoncus sapien neque urna. Cursus libero sapien integer magnis ligula
-          lobortis quam ut.
-        </p>
-        <h3>Lorem Ipsum</h3>
-        <p>
-          Lorem ipsum odor amet, consectetuer adipiscing elit. Ridiculus sit
-          nisl laoreet facilisis aliquet. Potenti dignissim litora eget montes
-          rhoncus sapien neque urna. Cursus libero sapien integer magnis ligula
-          lobortis quam ut.
-        </p>
-        <h3>Lorem Ipsum</h3>
-        <p>
-          Lorem ipsum odor amet, consectetuer adipiscing elit. Ridiculus sit
-          nisl laoreet facilisis aliquet. Potenti dignissim litora eget montes
-          rhoncus sapien neque urna. Cursus libero sapien integer magnis ligula
-          lobortis quam ut.
-        </p>
-        <h3>Lorem Ipsum</h3>
-        <p>
-          Lorem ipsum odor amet, consectetuer adipiscing elit. Ridiculus sit
-          nisl laoreet facilisis aliquet. Potenti dignissim litora eget montes
-          rhoncus sapien neque urna. Cursus libero sapien integer magnis ligula
-          lobortis quam ut.
-        </p>
-        <h3>Lorem Ipsum</h3>
-        <p>
-          Lorem ipsum odor amet, consectetuer adipiscing elit. Ridiculus sit
-          nisl laoreet facilisis aliquet. Potenti dignissim litora eget montes
-          rhoncus sapien neque urna. Cursus libero sapien integer magnis ligula
-          lobortis quam ut.
-        </p>
+      <div class="content home-bg">
+        <div class="homepage_infobox">
+          <h2 class="homepage_img_title"></h2>
+          <p class="homepage_desc"></p>
+        </div>
       </div>
-
-     <footer>
+      <footer>
         <p>Team Zooly © 2025 Australia Zoo. All rights reserved.</p>
-     </footer>
+      </footer>
     </div>
   </body>
 </html>

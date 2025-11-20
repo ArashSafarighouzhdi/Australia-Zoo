@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  color: #2d5016;
+}
+
+header nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.welcome-message {
+  line-height: 2;
+}
+
+.group-intro-title {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.group-intro-text {
+  max-width: 520px;
+}
+
+.animal-info {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 15px;
+}
+
+.animal-image {
+  width: 250px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.details p {
+  margin: 8px 0;
+}
+
+.short-description,
+.long-description,
+.add-details {
+  line-height: 1.7;
+  margin-top: 20px;
+}
+
+button {
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.readMoreBtn,
+.backBtn {
+  background: none;
+  border: 2px solid #2d5016;
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.sidebar {
+  background-color: #f5f5f0;
+  font-size: 24px;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.sidebar .tab.active {
+  display: inline-block;
+  font-weight: 600;
+  padding-bottom: 3px;
+  border-bottom: 3px solid #2d5016 !important;
+  text-decoration: none !important;
+  text-underline-offset: 6px;
+}
+
+/* -------------------- MOBILE: ALL PHONES UP TO 480px -------------------- */
+@media (max-width: 480px) {
+  .animal-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    gap: 16px;
+  }
+
+  .animal-image {
+    width: 100%;
+    max-width: 330px;
+  }
+
+  .details {
+    width: 100%;
+    text-align: left;
+  }
+
+  .short-description,
+  .long-description {
+    width: 100%;
+    text-align: left;
+  }
+
+  h2,
+  .group-intro-title {
+    font-size: 20px;
+  }
+
+  .readMoreBtn,
+  .backBtn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .sidebar {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  .sidebar ul li {
+    margin-bottom: 15px;
+  }
+}
+
+/* -------------------- BIG PHONES / SMALL TABLETS: UP TO 600px -------------------- */
+@media (max-width: 600px) {
+  .animal-info {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .animal-image {
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .sidebar {
+    font-size: 20px;
+  }
+}

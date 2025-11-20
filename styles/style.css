@@ -1,110 +1,254 @@
 * {
   color: #2d5016;
+  margin: 0;
 }
+
 .container {
   display: grid;
   grid-template-areas:
     "header header"
     "sidebar content"
     "footer footer";
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  gap: 1px;
   background-color: rgb(252, 252, 251);
   padding: 5px;
 }
 
 .container div {
   padding: 10px;
-  border-radius: 5px;
 }
-.container div.sidebar {
+
+.container .sidebar {
   grid-area: sidebar;
   padding: 20px;
   background-color: #f5f5f0;
   font-size: 24px;
+  width: 260px;
+  min-height: 0;
+  overflow: auto;
 }
+
 .container .sidebar ul {
   list-style: none;
   margin-top: 20px;
   padding: 0;
 }
+
 .container .sidebar ul li {
   margin-bottom: 30px;
 }
+
 .container .sidebar ul li:last-child {
   margin-bottom: 0;
 }
+
 .container .sidebar ul li a {
-  gap: 5px;
   text-decoration: none;
-  display: block;
+  display: inline-block;
+  padding: 0;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #2d5016;
+  border: none;
+  transition: color 0.2s;
 }
 
-.container div.content {
+.sidebar ul li a:hover {
+  color: #1a330c;
+}
+
+.sidebar ul li a.active {
+  border-bottom: 3px solid #2d5016 !important;
+  font-weight: bold;
+  padding-bottom: 3px;
+  display: inline-block;
+}
+
+.container .content {
   grid-area: content;
+  color: inherit;
+  position: relative;
+  padding: 40px;
+  min-height: 0;
+  overflow: auto;
+}
+
+.container .content.home-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url("../images/home_bg.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+@media (max-width: 420px) {
+  .container .content.home-bg {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 20px;
+  }
+
+  .homepage_infobox {
+    bottom: 6%;
+    left: 5%;
+    max-width: 85%;
+  }
+}
+
+.animal-panel {
+  border-radius: 8px;
+  padding: 24px;
+  min-height: 220px;
+}
+
+.animal-body h2 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.animal-line {
+  margin: 2px 0;
+  line-height: 2;
+}
+
+.read-more-btn {
+  margin-top: 12px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/*.read-more-btn .arrow {
+  margin-left: 6px;
+}*/  /*arrow removed*/
+
+.animal-card-full p {
+  margin: 2px 0;
+}
+
+.animal-card img {
+  width: 250px;
+  height: 250px;
+  border-radius: 8px;
+}
+
+.homepage_infobox {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  max-width: 60%;
+  z-index: 10;
+}
+
+.homepage_img_title {
+  display: block;
+  color: white;
+  text-align: left;
+  font-size: 3em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.homepage_desc {
+  display: block;
+  color: white;
+  text-align: left;
+  font-size: 1.2em;
+  line-height: 1.4;
+  width: 100%;
 }
 
 header {
   grid-area: header;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: #f5f5f0;
+  padding: 15px 20px;
 }
+
 .logo-container {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 .site-title {
   font-size: 1.8em;
   font-weight: bold;
 }
 
 .logo {
-  height: 40px;
+  height: 100px;
   width: auto;
   object-fit: contain;
-  justify-content: left;
-}
-
-header nav {
-  padding: 0;
-  margin: 0;
 }
 
 header nav ul {
   list-style: none;
   display: flex;
-  flex-direction: row;
-  justify-content: right;
   gap: 1.5rem;
   margin: 0;
   padding: 0;
 }
 
 header nav li {
-  display: inline;
+  position: relative;
 }
 
 header nav a {
   padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
   text-decoration: none;
   transition: color 0.15s;
-  display: flex;
-  flex-direction: row;
   font-size: 24px;
 }
 
- header nav a.active {
+header nav a.active {
   font-weight: bold;
   text-decoration: underline;
 }
 
-header nav a:hover {
-  color: rgb(27, 219, 88) (0, 255, 34);
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f5f5f0;
+  padding: 6px 0;
+  min-width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 12px 20px;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+  color: #2d5016;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #e5e5df;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 footer {
@@ -116,24 +260,101 @@ footer {
   padding: 10px;
 }
 
+/* Phones + small tablets: up to 768px */
 @media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
   .container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto auto;
     grid-template-areas:
       "header"
       "content"
       "sidebar"
       "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    min-height: auto;
+    gap: 0;
+    padding: 0;
   }
+
+  /* Header smaller */
   header {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    gap: 10px;
   }
-  header nav {
-    width: 100%;
+
+  .logo {
+    height: 40px; /* works on all phones */
   }
+
+  .site-title {
+    font-size: 1.3em;
+  }
+
   header nav ul {
-    justify-content: center;
+    gap: 10px;
+  }
+
+  header nav a {
+    font-size: 14px;
+    padding: 4px 6px;
+  }
+
+  .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 100%;
+    padding: 5px 0;
+  }
+
+  .dropdown-menu li a {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .container .sidebar {
+    width: 100% !important;
+    font-size: 18px;
+    padding: 12px 16px;
+  }
+
+  .container .sidebar ul li {
+    margin-bottom: 12px;
+  }
+
+  .container .content {
+    padding: 16px 12px 20px;
+    min-height: auto;
+  }
+
+  .container .content.home-bg {
+    background-position: center center;
+    padding: 16px 12px 20px;
+  }
+
+  .homepage_infobox {
+    position: static;
+    max-width: 100%;
+    margin-top: 16px;
+  }
+
+  .homepage_img_title {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+
+  .homepage_desc {
+    font-size: 0.95em;
+  }
+
+  footer {
+    padding: 6px 0;
+    font-size: 12px;
+    opacity: 0.9;
   }
 }

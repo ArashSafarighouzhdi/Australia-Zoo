@@ -26,7 +26,7 @@ const teamData = [
     photo: "../images/team/chaitali.jpg",
     role: "FullStack Developer",
     bio: "Passionate Full-Stack Engineer skilled in Django, React, and Next.js, building secure and scalable web applications.",
-    email: "",
+    email: "chaitali.deore@edu.futuregames.se",
     github: "https://github.com/Chaitali786",
     linkedin: "https://www.linkedin.com/in/chaitalideore786/",
     responsibilities: [
@@ -44,9 +44,9 @@ const teamData = [
     photo: "../images/team/smita.jpg",
     role: "Front End Developer",
     bio: "Dedicated to accuracy and educational value in every detail.",
-    email: "",
+    email: "Smita.Redkar@edu.futuregames.se",
     github: "https://github.com/smitaisverige",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/dr-smita-mithun-redkar-6269b821/",
     responsibilities: [
       " Design and implement the Reptiles Page layout and logic.",
       "Researched and compiled information about Australian animals",
@@ -91,6 +91,25 @@ const teamData = [
   },
 ];
 
+const aboutText = [
+  `We are <strong>Zooly</strong>, a passionate team of five developers
+   and designers dedicated to bringing Australia's wildlife to the
+   digital world.`,
+
+  `We designed this exhibition to showcase the beauty and diversity of
+   Australia's animals. Each of us contributed to researching,
+   designing, and building this project to help others discover the
+   beauty of our native animals.`,
+
+  `Our goal is to inform, inspire, and connect people with the animals
+   that make our world extraordinary.`,
+
+  `<strong>The Australia Zoo website was a true team project!</strong>
+   All five of us worked side by side on every part of the assignment,
+   designing, researching, coding, and testing. Together, we combined
+   our ideas and creativity to bring Australia's wildlife to life on screen.`,
+];
+
 const teamList = document.getElementById("teamList");
 const defaultMessage = document.getElementById("defaultMessage");
 const memberProfile = document.getElementById("memberProfile");
@@ -102,7 +121,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function init() {
   renderTeamList();
+  renderAboutText();
   setupEventListeners();
+}
+
+function renderAboutText() {
+  defaultMessage.innerHTML = `
+    <h2>Who We Are</h2>
+    ${aboutText.map((text) => `<p>${text}</p>`).join("")}
+  `;
 }
 
 function renderTeamList() {
