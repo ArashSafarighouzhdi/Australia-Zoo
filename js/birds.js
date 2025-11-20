@@ -1,8 +1,9 @@
-function Animal (name, group, food, description, length, weight, found, image) {
+function Animal (name, group, food, description, lifespan, length, weight, found, image) {
     this.name = name;
     this.group = group;
     this.food = food;
     this.description = description;
+    this.lifespan = lifespan;
     this.length = length;
     this.weight = weight;
     this.found = found;
@@ -14,6 +15,7 @@ let cassowary = new Animal (
     "Bird",
     "Plants matter like fruit, insects and small animals like mice and lizards",
     "It’s not hard to imagine that cassowaries are descended from dinosaur ancestors. The largest cassowaries can stand as high as six feet and weigh up to 160 pounds. These large birds cannot fly, but their extremely powerful legs propel them at great speeds. They are strong swimmers and can move quickly on both land and water. Cassowaries are shy and they are usually hard to spot, at least in their natural rain forest habitats. They are not overly aggressive, and attacks are rare. But they can do a lot of damage if they are provoked or angered. Cassowary attacks have occasionally been deadly, including a recent one which occurred in 2019, at a private collection of caged birds in Florida",
+    "20 years",
     "1.7 m",
     "44 kg",
     "Queensland",
@@ -25,6 +27,7 @@ let kookaburra = new Animal (
     "Bird",
     "Insects and small animals including snakes, frogs and lizards",
     "Native to the eucalyptus forests of eastern Australia, the laughing kookaburra is the largest member of the Kingfisher family, with females weighing up to one pound and growing to 43 cm in length. Its beak can reach 10 cm long and is used to snatch a variety of invertebrates and small vertebrates, including the occasional small snake. Since being introduced in western Australia and New Zealand, the kookaburra has angered farmers by preying on their fowl. The laughing kookaburra has dark brown wing plumage and a white head and underside. Dark brown eye stripes run across its face and its upper bill is black. Its reddish-coloured tail is patterned with black bars.",
+    "20 years",
     "43 cm",
     "300 g",
     "Australia wide",
@@ -36,6 +39,7 @@ let yellowTailedBlackCockatoo = new Animal (
     "Bird",
     "Fruit, seeds and other plant material",
     "It has a short crest on the top of its head. Its plumage is mostly brownish black and it has prominent yellow cheek patches and a yellow tail band. The body feathers are edged with yellow giving a scalloped appearance. The adult male has a black beak and pinkish-red eye-rings, and the female has a bone-coloured beak and grey eye-rings. In flight, yellow-tailed black cockatoos flap deeply and slowly, with a peculiar heavy fluid motion. Their loud, wailing calls carry for long distances. The yellow-tailed black cockatoo is found in temperate forests and forested areas across south and central eastern Queensland to southeastern South Australia, including a very small population persisting in the Eyre Peninsula.",
+    "41 years",
     "65 cm",
     "900 grams",
     "SE Australia",
@@ -83,8 +87,8 @@ animals.forEach(animal => {
     const details = document.createElement("div");
     details.classList.add("animal-details");
 
-    const h2 = document.createElement("h2");
-    h2.textContent = animal.name;
+    const nameP = document.createElement("h2");
+    nameP.textContent = animal.name;
 
     const groupP = document.createElement("p");
     groupP.innerHTML = `<strong>Group:</strong> ${animal.group}`;
@@ -92,7 +96,7 @@ animals.forEach(animal => {
     const foodP = document.createElement("p");
     foodP.innerHTML = `<strong>Food:</strong> ${animal.food}`;
 
-    details.append(h2, groupP, foodP);
+    details.append(nameP, groupP, foodP);
     topSection.append(img, details);
 
     const description = document.createElement("p");
@@ -104,7 +108,8 @@ animals.forEach(animal => {
 
     more.innerHTML = `
         <br><br>
-        <strong>Length:</strong> ${animal.length}
+        <strong>Lifespan:</strong> ${animal.lifespan}
+        <br><strong>Length:</strong> ${animal.length}
         <br><strong>Weight:</strong> ${animal.weight}
         <br><strong>Found:</strong> ${animal.found}
     `;
@@ -118,7 +123,7 @@ animals.forEach(animal => {
     button.addEventListener("click", () => {
     if (description.classList.contains("collapsed")) {
         description.classList.remove("collapsed");
-        button.textContent = "Show less";
+        button.textContent = "Back to Summary";
     } else {
         description.classList.add("collapsed");
         button.textContent = "Read more";
