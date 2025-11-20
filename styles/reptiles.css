@@ -3,6 +3,13 @@
   color: #2d5016;
 }
 
+header nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+
+}
+
 /*.welcome-message {
   background-color: #ffffff;
   border-radius: 8px;
@@ -46,22 +53,23 @@
   width: 250px;
 }
 
-.details p {
-  font-size: 1.1em;
+.details p { 
   margin: 8px 0;
 }
 
 .short-description {
-  font-size: 1.1em;
-  margin-top: 20px;
+   margin-top: 20px;
   line-height: 1.7;
 }
 
 .long-description {
-  font-size: 1.1em;
   line-height: 1.7;
   margin-top: 20px;
 
+}
+
+.add-details{
+  line-height: 1.7;
 }
 
 button {
@@ -77,9 +85,13 @@ button {
 
 .readMoreBtn,
 .backBtn {
-  display: block;
-  margin-top: 20px;
-  width: auto;
+  background: none;
+  border: 2px solid  #2d5016;
+  border-radius: 5px;
+  cursor: pointer;
+  font: inherit;
+  padding: 8px;
+  margin-top: 8px;  
 
 }
 
@@ -99,7 +111,7 @@ button {
   font-weight: 600;
   padding-bottom: 3px;
   text-decoration: none !important;
-  text-underline-offset: 4px;
+  text-underline-offset: 6px;
 }
 
 @media (max-width: 390px) {

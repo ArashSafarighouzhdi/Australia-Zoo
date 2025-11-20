@@ -96,16 +96,18 @@ function showFullSummary(animal) {
         <img src="${animal.image}" class="animal-image" alt="${animal.name}">
         <div class="details">
           <h2>${animal.name}</h2>
-          <p><strong>Lifespan:</strong> ${animal.lifespan}</p>
+          
           <p><strong>Group:</strong> ${animal.group}</p>
           <p><strong>Food:</strong> ${animal.food}</p>
-          <p><strong>Length:</strong> ${animal.length}</p>
-          <p><strong>Weight:</strong> ${animal.weight}</p>
-          <p><strong>Found in:</strong> ${animal.found}</p>
+          
+          
         </div>
       </div>
-
       <p class="long-description">${animal.fullDescription}</p>
+      <p class="add-details"><strong>Lifespan:</strong> ${animal.lifespan}</p>
+      <p class="add-details"><strong>Length:</strong> ${animal.length}</p>
+      <p class="add-details"><strong>Weight:</strong> ${animal.weight}</p>
+      <p class="add-details"><strong>Found:</strong> ${animal.found}</p>
       <button class="backBtn">Back to Summary</button>
     </div>
   `;
