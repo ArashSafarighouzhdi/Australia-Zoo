@@ -1,17 +1,13 @@
 const sidebar_links = [
-  { text: "Echidna", url: "", id: "echidnaLink" },
-  { text: "Tasmanian Devil", url: "", id: "tasmaniandevilLink" },
-  { text: "Quokka", url: "", id: "quokkaLink" },
-  { text: "Frill-necked lizard", url: "", id: "frill-neckedlizardLink" },
-  { text: "Hawksbill Sea Turtle", url: "", id: "hawksbillturtleLink" },
-  { text: "Perentie", url: "", id: "perentieLink" },
-  { text: "cassowary", url: "", id: "cassowaryLink" },
-  { text: "kookaburra", url: "", id: "kookaburraLink" },
-  {
-    text: "Yellow Tailed Black Cockatoo",
-    url: "",
-    id: "yellowtailedblackcockatooLink",
-  },
+  { text: "Echidna" },
+  { text: "Tasmanian Devil" },
+  { text: "Quokka" },
+  { text: "Frill-necked lizard" },
+  { text: "Hawksbill Sea Turtle" },
+  { text: "Perentie" },
+  { text: "cassowary" },
+  { text: "kookaburra" },
+  { text: "Yellow Tailed Black Cockatoo" },
 ];
 
 const homepage_content = {
@@ -40,20 +36,16 @@ homepageInfoBox.innerHTML = `
 
 function goHome() {
   contentContainer.id = "";
-  // restore homepage background
   contentContainer.classList.add("home-bg");
-
   contentContainer.innerHTML = `
     <div class ="homepage_infobox">
       <h2 class="homepage_img_title">${homepage_content.siteTitle}</h2>
       <p class ="homepage_desc">${homepage_content.siteDescription}</p>
     </div>
   `;
-
   console.log("Navigated back to Home.");
 }
 
-// Show full summary
 function showSummary(animal) {
   contentPanel.innerHTML = `
       <article class="animal-card animal-card-full">
@@ -79,13 +71,6 @@ if (homeMenuButton) {
     event.preventDefault();
     goHome();
   });
-}
-
-// Truncate function
-function truncate(text, maxLength) {
-  if (!text) return "";
-  if (text.length <= maxLength) return text;
-  return text.slice(0, maxLength) + "…";
 }
 
 // Track active sidebar link
