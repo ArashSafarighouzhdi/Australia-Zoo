@@ -5,8 +5,8 @@ const sidebar_links = [
   { text: "Frill-necked lizard" },
   { text: "Hawksbill Sea Turtle" },
   { text: "Perentie" },
-  { text: "cassowary" },
-  { text: "kookaburra" },
+  { text: "Cassowary" },
+  { text: "Kookaburra" },
   { text: "Yellow Tailed Black Cockatoo" },
 ];
 
