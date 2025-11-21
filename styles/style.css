@@ -3,6 +3,11 @@
   margin: 0;
 }
 
+
+html, body {
+  height: 100%;
+}
+
 .container {
   display: grid;
   grid-template-areas:
@@ -125,10 +130,6 @@
   font-size: 14px;
 }
 
-/*.read-more-btn .arrow {
-  margin-left: 6px;
-}*/  /*arrow removed*/
-
 .animal-card-full p {
   margin: 2px 0;
 }
@@ -137,6 +138,7 @@
   width: 250px;
   height: 250px;
   border-radius: 8px;
+  margin:10px;
 }
 
 .homepage_infobox {
@@ -174,7 +176,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: #f5f5f0;
-  padding: 15px 20px;
+  padding: 10px 16px;
 }
 
 .logo-container {
@@ -184,12 +186,12 @@ header {
 }
 
 .site-title {
-  font-size: 1.8em;
+  font-size: 1.6em;
   font-weight: bold;
 }
 
 .logo {
-  height: 100px;
+  height: 64px;
   width: auto;
   object-fit: contain;
 }
@@ -260,7 +262,7 @@ footer {
   padding: 10px;
 }
 
-/* Phones + small tablets: up to 768px */
+
 @media (max-width: 768px) {
   body {
     overflow-x: hidden;
@@ -273,13 +275,13 @@ footer {
       "sidebar"
       "footer";
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
-    min-height: auto;
+    grid-template-rows: auto 1fr auto auto;
+    min-height: 100vh;
     gap: 0;
     padding: 0;
   }
 
-  /* Header smaller */
+  
   header {
     flex-direction: row;
     justify-content: space-between;
@@ -289,7 +291,7 @@ footer {
   }
 
   .logo {
-    height: 40px; /* works on all phones */
+    height: 40px; /
   }
 
   .site-title {

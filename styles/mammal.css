@@ -20,14 +20,14 @@ nav ul a[aria-current="page"] {
   gap: 16px;
 }
 
-/* ---------- WELCOME MESSAGE ---------- */
+/* ---------- WELCOME MESSAGE ---------- 
 
 .welcome-message {
   background-color: #ffffff;
   border-radius: 8px;
   padding: 24px;
   line-height: 1.6;
-}
+}*/
 
 .group-intro-title {
   font-size: 24px;
@@ -39,14 +39,14 @@ nav ul a[aria-current="page"] {
   margin: 0;
 }
 
-/* ---------- ANIMAL PANELS (SUMMARY + FULL) ---------- */
+/* ---------- ANIMAL PANELS (SUMMARY + FULL) ---------- 
 
 .animal-summary,
 .animal-full {
   background-color: #ffffff;
   border-radius: 8px;
   padding: 24px;
-}
+}*/
 
 .animal-info {
   display: flex;
