@@ -1,10 +1,21 @@
-
-function Animal(name, group, food, description, lifespan, length, weight, found, image) {
+function Animal(
+  name,
+  lifespan,
+  group,
+  food,
+  description,
+  fullDescription,
+  length,
+  weight,
+  found,
+  image
+) {
   this.name = name;
+  this.lifespan = lifespan;
   this.group = group;
   this.food = food;
   this.description = description;
-  this.lifespan = lifespan;
+  this.fullDescription = fullDescription;
   this.length = length;
   this.weight = weight;
   this.found = found;
@@ -12,153 +23,145 @@ function Animal(name, group, food, description, lifespan, length, weight, found,
 }
 
 
-let echidna = new Animal(
-  "Echidna",
-  "Mammal",
-  "Insects such as ants and termites, beetle larvae and worms",
-  "Echidnas, also called spiny anteaters, are walking contradictions. They are mammals, but they lay eggs. They are often classified as long- or short-beaked, but don't have beaks at all, in the traditional sense; they have fleshy noses that can be either on the long side or rather short. They don't really look like true anteaters (Myrmecophaga tridactyla), either, and they are not closely related to them. They are spiny, though; their bodies are covered with hollow, barbless quills. Echidnas are monotremes, egg-laying mammals. The only other living monotreme is the platypus.",
-  "50 years",
-  "76 cm",
-  "10 kg",
-  "Throughout Australia",
-  "./images/mammal/image1.png"
-);
+const mammals = [
+  new Animal(
+    "Echidna",
+    "50 years",
+    "Mammal",
+    "Insects such as ants and termites, beetle larvae and worms",
+    // short description
+    "Echidnas, also called spiny anteaters, are walking contradictions. They are mammals, but they lay eggs.",
+    // full description
+    "Echidnas, also called spiny anteaters, are walking contradictions. They are mammals, but they lay eggs. They are often classified as long- or sort-beaked, but don't have beaks at all, in the traditional sense; they have fleshy noses that can be either on the long side or rather short. They don't really look like true anteaters (Myrmecophaga tridactyla), either, and they are not closely related to them. They are spiny, though; their bodies are covered with hollow, barbless quills. Echidnas are monotremes, egg-laying mammals. The only other living monotreme is the platypus.",
+    "76 cm",
+    "10 kg",
+    "Throughout Australia",
+    "./images/mammal/image1.png"
+  ),
 
-let tasmanianDevil = new Animal(
-  "Tasmanian Devil",
-  "Mammal",
-  "A predator, they eat meat from other animals such as wallabies and wombats",
-  "The Tasmanian devil (Sarcophilus harrisii) is a carnivorous marsupial of the family Dasyuridae. Until recently, it was only found on the island state of Tasmania, but it has been reintroduced to New South Wales in mainland Australia, with a small breeding population. The size of a small dog, the Tasmanian devil became the largest carnivorous marsupial in the world, following the extinction of the thylacine in 1936. It is related to quolls, and distantly related to the thylacine. It is characterised by its stocky and muscular build, black fur, pungent odour, extremely loud and disturbing screech, keen sense of smell, and ferocity when feeding. The Tasmanian devil's large head and neck allow it to generate among the strongest bites per unit body mass of any extant predatory land mammal. It hunts prey and scavenges on carrion.",
-  "5 years",
-  "70 cm",
-  "10 kg",
-  "Tasmania",
-  "./images/mammal/image2.png"
-);
+  new Animal(
+    "Tasmanian Devil",
+    "5 years",
+    "Mammal",
+    "They eat meat from other animals such as wallabies and wombats",
+    "The Tasmanian devil is a stocky carnivorous marsupial with black fur, a loud screech, and very powerful jaws.",
+    "The Tasmanian devil (Sarcophilus harrisii) is a carnivorous marsupial of the family Dasyuridae. Until recently, it was only found on the island state of Tasmania, but it has been reintroduced to New South Wales in mainland Australia, with a small breeding population. The size of a small dog, the Tasmanian devil became the largest carnivorous marsupial in the world, following the extinction of the thylacine in 1936. It is related to quolls, and distantly related to the thylacine. It is characterised by its stocky and muscular build, black fur, pungent odour, extremely loud and disturbing screech, keen sense of smell, and ferocity when feeding. The Tasmanian devil's large head and neck allow it to generate among the strongest bites per unit body mass of any extant predatory land mammal. It hunts prey and scavenges on carrion.",
+    "70 cm",
+    "10 kg",
+    "Tasmania",
+    "./images/mammal/image2.png"
+  ),
 
-let quokka = new Animal(
-  "Quokka",
-  "Mammal",
-  "Plant eaters, they munch on shrubs and grasses",
-  "The Quokka (Setonix brachyurus) was described by early Dutch explorer Willem de Vlamingh as a kind of rat as big as a common cat. His first sighting of the quokka was on an island off the mouth of the Swan River. He named the island Rottenest (rat nest) in honour of this sighting. The island is now known as Rottnest Island. Essentially the quokka looks very much like other wallabies. It has short, very coarse and thick grey-brown fur over most of the body with lighter parts underneath. Its facial features consist of a naked nose on a short, broad face with rounded furry ears. The tail is relatively short and mostly devoid of hair. In contrast, the hair on the feet extends to cover its claws.",
-  "10 years",
-  "50 cm",
-  "3 kg",
-  "Only found on Rottnest Island and a few places on mainland Western Australia",
-  "./images/mammal/image3.png"
-);
-
-const animals = [echidna, tasmanianDevil, quokka];
-
-
-let mainContent = document.querySelector(".content");
-
-let groupTypeMessageHeading = document.createElement("h1");
-groupTypeMessageHeading.textContent = `Australia's Marvelous Mammals`;
-mainContent.appendChild(groupTypeMessageHeading);
-
-let groupTypeMessageIntro = document.createElement("p");
-groupTypeMessageIntro.textContent = `Warm-blooded, fur-covered, and full of character — Australia’s mammals come in all shapes and sizes. From egg-laying echidnas to curious quokkas, these animals nurture their young in unique ways and survive in one of the most diverse ecosystems on Earth.`;
-mainContent.appendChild(groupTypeMessageIntro);
+  new Animal(
+    "Quokka",
+    "10 years",
+    "Mammal",
+    "Plant eaters, they munch on shrubs and grasses",
+    "The quokka is a small wallaby-like marsupial known for its smiling, friendly appearance.",
+    "The Quokka, Setonix brachyurus, was described by early Dutch explorer Willem de Vlamingh as a kind of rat as big as a common cat. His first sighting of the Quokka was on an island off the mouth of the Swan River. He named the island Rottenest (rat nest) in honour of this sighting. The island is now known as Rottnest Island. Essentially the Quokka looks very much like other wallabies. It has short, very coarse and thick grey-brown fur over most of the body with lighter parts underneath. Its facial features consist of a naked nose on a short, broad face with rounded furry ears. The tail is relatively short and mostly devoid of hair. In contrast, the hair on the feet extends to cover its claws.",
+    "50 cm",
+    "3 kg",
+    "Only found on Rottnest Island and a few places on mainland Western Australia",
+    "./images/mammal/image3.png"
+  )
+];
 
 
-const sidebarContent = document.querySelector(".sidebar");
-mainContent = document.querySelector(".content");
+document.addEventListener("DOMContentLoaded", () => {
 
-animals.forEach((animal) => {
-  
-  const tab = document.createElement("a");
-  tab.textContent = animal.name;
-  tab.classList.add("sidebar-tab");
+  const contentDiv = document.getElementById("animal-panel");
+  const sidebarTabs = document.querySelectorAll(".sidebar .tab");
 
-  const wrapper = document.createElement("div");
-  wrapper.classList.add("wrapper");
-  wrapper.appendChild(tab);
-  sidebarContent.appendChild(wrapper);
+ 
+  if (!contentDiv || sidebarTabs.length === 0) return;
 
+  function showWelcomeMessage() {
+    contentDiv.innerHTML = `
+      <div class="welcome-message">
+        <h2 class="group-intro-title">Meet Australia's Marvelous Mammals</h2>
+        <p class="group-intro-text">
+          From egg-laying monotremes to powerful marsupials, Australia's mammals are
+          full of surprises. Choose one from the left to learn more.
+        </p>
+      </div>
+    `;
+  }
 
-  const className = animal.name.toLowerCase().replaceAll(" ", "-");
-  const infoDiv = document.createElement("div");
-  infoDiv.classList.add("info", className);
+  function showAnimalSummary(animal) {
+    contentDiv.innerHTML = `
+      <div class="animal-summary">
+        <div class="animal-info">
+          <img src="${animal.image}" class="animal-image" alt="${animal.name}">
+          <div class="details">
+            <h2>${animal.name}</h2>
+            <p><strong>Group:</strong> ${animal.group}</p>
+            <p><strong>Food:</strong> ${animal.food}</p>
+          </div>
+        </div>
 
-  const topSection = document.createElement("div");
-  topSection.classList.add("top-section");
+        <p class="short-description">${animal.description}</p>
+        <button class="readMoreBtn">Read More</button>
+      </div>
+    `;
 
-  const img = document.createElement("img");
-  img.src = animal.image;
-  img.alt = animal.name;
+    document.querySelector(".readMoreBtn").addEventListener("click", () => {
+      showFullSummary(animal);
+    });
+  }
 
-  const details = document.createElement("div");
-  details.classList.add("animal-details");
+  function showFullSummary(animal) {
+    contentDiv.innerHTML = `
+      <div class="animal-full">
+        <div class="animal-info">
+          <img src="${animal.image}" class="animal-image" alt="${animal.name}">
+          <div class="details">
+            <h2>${animal.name}</h2>
+            <p><strong>Group:</strong> ${animal.group}</p>
+            <p><strong>Food:</strong> ${animal.food}</p>
+          </div>
+        </div>
 
-  const nameH2 = document.createElement("h2");
-  nameH2.textContent = animal.name;
+        <p class="long-description">${animal.fullDescription}</p>
+        <p class="add-details"><strong>Lifespan:</strong> ${animal.lifespan}</p>
+        <p class="add-details"><strong>Length:</strong> ${animal.length}</p>
+        <p class="add-details"><strong>Weight:</strong> ${animal.weight}</p>
+        <p class="add-details"><strong>Found:</strong> ${animal.found}</p>
 
-  const groupP = document.createElement("p");
-  groupP.innerHTML = `<strong>Group:</strong> ${animal.group}`;
+        <button class="backBtn">Back to Summary</button>
+      </div>
+    `;
 
-  const foodP = document.createElement("p");
-  foodP.innerHTML = `<strong>Food:</strong> ${animal.food}`;
+    document.querySelector(".backBtn").addEventListener("click", () => {
+      showAnimalSummary(animal);
+    });
+  }
 
-  details.append(nameH2, groupP, foodP);
-  topSection.append(img, details);
+  sidebarTabs.forEach((tab) => {
+    tab.addEventListener("click", (event) => {
+      const clickedTab = event.target;
+      const clickedName = clickedTab.innerText.trim().toLowerCase();
 
-  const description = document.createElement("p");
-  description.classList.add("description", "collapsed");
-  description.textContent = animal.description;
+      if (clickedTab.classList.contains("active")) {
+        sidebarTabs.forEach((t) => t.classList.remove("active"));
+        showWelcomeMessage();
+        return;
+      }
 
-  const more = document.createElement("span");
-  more.classList.add("more");
-  more.innerHTML = `
-    <br><br>
-    <strong>Lifespan:</strong> ${animal.lifespan}
-    <br><strong>Length:</strong> ${animal.length}
-    <br><strong>Weight:</strong> ${animal.weight}
-    <br><strong>Found:</strong> ${animal.found}
-  `;
+      sidebarTabs.forEach((t) => t.classList.remove("active"));
+      clickedTab.classList.add("active");
 
-  description.appendChild(more);
+      const animal = mammals.find(
+        (a) => a.name.toLowerCase() === clickedName
+      );
 
-  const button = document.createElement("button");
-  button.classList.add("read-more");
-  button.textContent = "Read more";
-
-  button.addEventListener("click", () => {
-    if (description.classList.contains("collapsed")) {
-      description.classList.remove("collapsed");
-      button.textContent = "Back to Summary";
-    } else {
-      description.classList.add("collapsed");
-      button.textContent = "Read more";
-    }
+      if (animal) {
+        showAnimalSummary(animal);
+      } else {
+        showWelcomeMessage();
+      }
+    });
   });
 
-  infoDiv.append(topSection, description, button);
-  mainContent.appendChild(infoDiv);
-});
 
-
-const allTabs = Array.from(document.querySelectorAll(".sidebar-tab"));
-const contentDivs = Array.from(document.querySelectorAll(".info"));
-mainContent = document.querySelector(".content");
-
-allTabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    const targetClass = tab.textContent.toLowerCase().replaceAll(" ", "-");
-    const match = document.querySelector(`.info.${targetClass}`);
-
-    if (tab.classList.contains("active")) {
-      allTabs.forEach((t) => t.classList.remove("active"));
-      contentDivs.forEach((content) => content.classList.remove("active"));
-      mainContent.classList.remove("hide-intro");
-      return;
-    }
-
-    mainContent.classList.add("hide-intro");
-    allTabs.forEach((t) => t.classList.remove("active"));
-    contentDivs.forEach((content) => content.classList.remove("active"));
-
-    tab.classList.add("active");
-    if (match) match.classList.add("active");
-  });
+  showWelcomeMessage();
 });
