@@ -46,6 +46,13 @@ function goHome() {
   console.log("Navigated back to Home.");
 }
 
+// Truncate function
+function truncate(text, maxLength) {
+  if (!text) return "";
+  if (text.length <= maxLength) return text;
+  return text.slice(0, maxLength) + "…";
+}
+
 function showSummary(animal) {
   contentPanel.innerHTML = `
       <article class="animal-card animal-card-full">
@@ -56,9 +63,12 @@ function showSummary(animal) {
           <a href="${animal.group.toLowerCase()}s.html">${animal.group}</a>
           </p>
           <p class="animal-line"><strong>Food: </strong> ${animal.food}</p>
-          <p class="animal-line"><strong>Description: </strong> ${
-            animal.description
-          }</p>
+           <p class="animal-line"><strong>Description: </strong> ${truncate(
+             animal.description,
+             200
+           )}</p>
+
+          
           
         </div>
       </article>
